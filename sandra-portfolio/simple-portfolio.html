@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandra Lana - Aerospace Procurement Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        }
+        .premium-shadow {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .premium-shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .subtle-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .subtle-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .navy-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+        .executive-portrait {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        /* Scroll animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Timeline styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #1e40af;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e2e8f0;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + 2rem);
+            background: #e2e8f0;
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        /* Premium micro-interactions */
+        .premium-button {
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .premium-button:hover::before {
+            left: 100%;
+        }
+        
+        .floating-card {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse-accent {
+            animation: pulse-accent 2s ease-in-out infinite;
+        }
+        @keyframes pulse-accent {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Enhanced header depth */
+        .header-enhanced {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        /* Company logo styles */
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: white;
+            font-size: 16px;
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .airbus-logo {
+            background: #1e293b;
+        }
+        
+        .lufthansa-logo {
+            background: #374151;
+        }
+        
+        /* Full height image container */
+        .full-height-image {
+            height: 100%;
+            min-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full header-enhanced">
+        <nav class="container mx-auto px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">SL</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-semibold text-slate-900">Sandra Lana</span>
+                        <span class="text-xs text-slate-500 hidden sm:block">Procurement Specialist</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200">About</a>
+                    <a href="#experience" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200">Experience</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200">Contact</a>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <a href="mailto:sandralanaltd@gmail.com" class="inline-flex items-center px-4 py-2 text-sm font-medium text-slate-900 border border-slate-300 hover:border-slate-400 rounded-lg transition-all duration-200 subtle-hover">
+                        Contact
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center bg-white">
+        <div class="container mx-auto px-6 lg:px-8 py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-10 fade-in-left">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium tracking-wide uppercase pulse-accent">
+                            Available for opportunities
+                        </div>
+                        <h1 class="text-5xl lg:text-6xl font-light text-slate-900 leading-tight tracking-tight">
+                            Aerospace Procurement & Supply Chain
+                            <span class="font-medium text-blue-700">Specialist</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 leading-relaxed max-w-xl font-light">
+                            Strategic sourcing professional with 8+ years at Airbus delivering measurable value through supplier management, cost optimization, and operational excellence.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-center space-x-6">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 rounded-lg transition-all duration-200 premium-button">
+                            Get in touch
+                        </a>
+                        <a href="https://linkedin.com/in/sandralana-9a49a874" target="_blank" class="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors duration-200">
+                            LinkedIn →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Presentation Video -->
+                <div class="relative fade-in-right">
+                    <div class="relative bg-slate-50 rounded-xl p-2 premium-shadow-lg floating-card">
+                        <video 
+                            class="w-full aspect-video rounded-lg" 
+                            autoplay 
+                            loop 
+                            controls 
+                            preload="metadata"
+                        >
+                            <source src="presentation.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute -top-2 -right-2 bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-medium">
+                            Presentation
+                        </div>
+                    </div>
+                    <!-- Subtle metrics overlay -->
+                    <div class="absolute -bottom-6 -right-6 bg-white rounded-lg premium-shadow p-4 subtle-hover max-w-xs">
+                        <div class="text-center space-y-2">
+                            <div class="text-2xl font-semibold text-blue-700">$10M+</div>
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">Annual Cost Savings</div>
+                            <div class="border-t border-slate-200 pt-2">
+                                <div class="text-xs font-medium text-slate-700">🏆 Airbus Award Winner</div>
+                                <div class="text-xs text-slate-500">Buy-Back Model Innovation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in-up">
+                <h2 class="text-3xl font-light text-slate-900 mb-4">Key Metrics</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto font-light">
+                    Measurable impact across strategic procurement initiatives
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl p-8 premium-shadow subtle-hover scale-in">
+                    <div class="text-center">
+                        <div class="text-4xl font-light text-blue-700 mb-2">$10M+</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Annual Cost Savings</div>
+                        <div class="text-xs text-slate-400 mt-2">Self-initiated innovation project</div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-8 premium-shadow subtle-hover scale-in" style="animation-delay: 0.2s;">
+                    <div class="text-center">
+                        <div class="text-4xl font-light text-blue-700 mb-2">🏆</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Airbus Award Winner</div>
+                        <div class="text-xs text-slate-400 mt-2">Buy-Back Model innovation</div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-8 premium-shadow subtle-hover scale-in" style="animation-delay: 0.4s;">
+                    <div class="text-center">
+                        <div class="text-4xl font-light text-blue-700 mb-2">60 Days</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Lead Time Reduction</div>
+                        <div class="text-xs text-slate-400 mt-2">Process optimization</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
+                <div class="space-y-12 flex flex-col justify-center">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-light text-slate-900">About</h2>
+                        <p class="text-lg text-slate-600 leading-relaxed font-light">
+                            Strategic procurement professional with 8+ years at Airbus, specializing in supplier management, cost optimization, and operational excellence across aerospace supply chains.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed font-light">
+                            My expertise spans electrical standard parts, aerostructures, and aftermarket procurement. I focus on building sustainable supplier partnerships while delivering measurable cost reductions and process improvements.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-medium text-slate-900 uppercase tracking-wide">Education</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="font-medium text-slate-900">B.Sc. Economics & Business Administration</div>
+                                    <div class="text-sm text-slate-500">Justus Liebig University Giessen</div>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-slate-900">Economics</div>
+                                    <div class="text-sm text-slate-500">Université de Montpellier</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-medium text-slate-900 uppercase tracking-wide">Languages</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-600">German</span>
+                                    <span class="text-sm text-slate-500">Native</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-600">English</span>
+                                    <span class="text-sm text-slate-500">Fluent</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-600">French</span>
+                                    <span class="text-sm text-slate-500">Fluent</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-600">Spanish</span>
+                                    <span class="text-sm text-slate-500">Professional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h4 class="text-sm font-medium text-slate-900 uppercase tracking-wide">Interests</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Trail Running</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Hiking</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Photography</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Writing</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Golf</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="relative w-full full-height-image rounded-xl overflow-hidden executive-portrait premium-shadow">
+                        <img src="sandra-lana-profile.png" alt="Sandra Lana - Professional Portrait" class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in-up">
+                <h2 class="text-3xl font-light text-slate-900 mb-4">Experience</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto font-light">
+                    8+ years of progressive experience in aerospace procurement and strategic sourcing
+                </p>
+            </div>
+            
+            <!-- Airbus Company Header -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <div class="flex items-center space-x-4 mb-8 fade-in-up">
+                    <div class="company-logo airbus-logo">
+                        A
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-900">Airbus</h3>
+                        <p class="text-slate-600">Permanent · 6 yrs 11 mos</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline -->
+                <div class="space-y-12">
+                    <div class="timeline-item fade-in-up">
+                        <div class="bg-white rounded-xl p-8 premium-shadow subtle-hover">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-slate-900 mb-1">Buyer - Cabin Aftermarket</h4>
+                                    <div class="text-slate-600 font-medium">Airbus</div>
+                                </div>
+                                <div class="flex flex-col sm:items-end mt-2 sm:mt-0">
+                                    <div class="text-sm text-slate-500">Aug 2023 - Present · 2 yrs 2 mos</div>
+                                    <div class="text-xs text-slate-400">Toulouse, Occitanie, France</div>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                Driving aftermarket procurement for Cabin Lights and Door Locking Systems while supporting AI-related projects. Reduced unit costs, improved supplier performance, and introduced new Buy-Back model for sustainability and long-term savings.
+                            </p>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <div class="w-2 h-2 bg-blue-700 rounded-full"></div>
+                                </div>
+                                <span class="text-sm text-slate-600 font-medium">aerospace procurement, Supplier Relationship Management and +3 skills</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in-up">
+                        <div class="bg-white rounded-xl p-8 premium-shadow subtle-hover">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-slate-900 mb-1">Buyer - Electrical Standard Parts</h4>
+                                    <div class="text-slate-600 font-medium">Airbus</div>
+                                </div>
+                                <div class="flex flex-col sm:items-end mt-2 sm:mt-0">
+                                    <div class="text-sm text-slate-500">May 2021 - Jul 2023 · 2 yrs 3 mos</div>
+                                    <div class="text-xs text-slate-400">Toulouse, Occitanie, France</div>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                Managed multi-program aircraft electrical components (Contacts, Accessories, Backshells, Raceways, Conduits, Cable Ties). Achieved $10M savings through strategic sourcing and boosted supplier KPIs with workshops and performance reviews.
+                            </p>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <div class="w-2 h-2 bg-blue-700 rounded-full"></div>
+                                </div>
+                                <span class="text-sm text-slate-600 font-medium">Strategic Sourcing, electrical components procurement and +3 skills</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in-up">
+                        <div class="bg-white rounded-xl p-8 premium-shadow subtle-hover">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-slate-900 mb-1">Buyer - Aerostructure Wings with China</h4>
+                                    <div class="text-slate-600 font-medium">Airbus</div>
+                                </div>
+                                <div class="flex flex-col sm:items-end mt-2 sm:mt-0">
+                                    <div class="text-sm text-slate-500">Nov 2018 - Apr 2021 · 2 yrs 6 mos</div>
+                                    <div class="text-xs text-slate-400">Bristol, United Kingdom and Spain</div>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                Oversaw supplier negotiations, contracts, and logistics for SA Wing components. Managed cross-border procurement operations and built strategic partnerships with Chinese suppliers while ensuring compliance and quality standards.
+                            </p>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <div class="w-2 h-2 bg-blue-700 rounded-full"></div>
+                                </div>
+                                <span class="text-sm text-slate-600 font-medium">Teaching, Supplier Negotiation and +4 skills</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in-up">
+                        <div class="bg-white rounded-xl p-8 premium-shadow subtle-hover">
+                            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-slate-900 mb-1">Procurement Intern</h4>
+                                    <div class="text-slate-600 font-medium">Airbus Group</div>
+                                </div>
+                                <div class="flex flex-col sm:items-end mt-2 sm:mt-0">
+                                    <div class="text-sm text-slate-500">Aug 2016 - Jul 2017 · 1 yr</div>
+                                    <div class="text-xs text-slate-400">Bristol, United Kingdom</div>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed mb-4">
+                                Led RFPs and Transfer of Works for small standard parts commodities, including the commodity strategy. Gained foundational experience in aerospace procurement processes and supplier management.
+                            </p>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <div class="w-2 h-2 bg-blue-700 rounded-full"></div>
+                                </div>
+                                <span class="text-sm text-slate-600 font-medium">Request for Proposal (RFP), Contract Negotiation and +3 skills</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lufthansa Experience -->
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center space-x-4 mb-8 fade-in-up">
+                    <div class="company-logo lufthansa-logo">
+                        L
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-900">Lufthansa Cargo AG</h3>
+                        <p class="text-slate-600">3 mos</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in-up">
+                    <div class="bg-white rounded-xl p-8 premium-shadow subtle-hover">
+                        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+                            <div>
+                                <h4 class="text-lg font-semibold text-slate-900 mb-1">Procurement Intern</h4>
+                                <div class="text-slate-600 font-medium">Lufthansa Cargo AG</div>
+                            </div>
+                            <div class="flex flex-col sm:items-end mt-2 sm:mt-0">
+                                <div class="text-sm text-slate-500">Apr 2016 - Jun 2016 · 3 mos</div>
+                                <div class="text-xs text-slate-400">Frankfurt Am Main Area, Germany</div>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Assisted in procurement audits, ensuring contracts were accurate and compliant. Gained experience in contract management and procurement processes within the aviation industry.
+                        </p>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-blue-100 rounded-full flex items-center justify-center">
+                                <div class="w-2 h-2 bg-blue-700 rounded-full"></div>
+                            </div>
+                            <span class="text-sm text-slate-600 font-medium">Procurement Audit, Contract Management and +3 skills</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in-up">
+                <h2 class="text-3xl font-light text-slate-900 mb-4">Contact</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto font-light">
+                    Ready to discuss your next procurement challenge? Let's connect.
+                </p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="text-center scale-in">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-4 subtle-hover">
+                        <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-sm font-medium text-slate-900 mb-2">Email</h3>
+                    <a href="mailto:sandralanaltd@gmail.com" class="text-slate-600 hover:text-blue-700 transition-colors text-sm">
+                        sandralanaltd@gmail.com
+                    </a>
+                </div>
+                
+                <div class="text-center scale-in" style="animation-delay: 0.2s;">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-4 subtle-hover">
+                        <svg class="w-5 h-5 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-sm font-medium text-slate-900 mb-2">LinkedIn</h3>
+                    <a href="https://linkedin.com/in/sandralana-9a49a874" target="_blank" class="text-slate-600 hover:text-blue-700 transition-colors text-sm">
+                        Connect with me
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center fade-in-up">
+                <a href="mailto:sandralanaltd@gmail.com" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 rounded-lg transition-all duration-200 premium-button">
+                    Get in touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 py-16">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-8">
+                    <span class="text-lg font-medium text-slate-900">Sandra Lana</span>
+                    <p class="text-sm text-slate-500 mt-2 max-w-md mx-auto">
+                        Aerospace Procurement & Supply Chain Specialist
+                    </p>
+                </div>
+                <div class="border-t border-slate-200 pt-8">
+                    <p class="text-xs text-slate-400">© 2024 Sandra Lana. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add premium micro-interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add hover effect to cards
+            const cards = document.querySelectorAll('.subtle-hover');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-2px)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add typing effect to headline (optional)
+            const headline = document.querySelector('h1');
+            if (headline) {
+                const text = headline.textContent;
+                headline.textContent = '';
+                let i = 0;
+                const typeWriter = () => {
+                    if (i < text.length) {
+                        headline.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 50);
+                    }
+                };
+                // Uncomment to enable typing effect
+                // setTimeout(typeWriter, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
